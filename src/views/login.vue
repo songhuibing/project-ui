@@ -6,26 +6,22 @@
         <div class="infoDetail">
           <el-form :model="formLabelAlign">
             <el-form-item>
-              <el-input placeholder="请输入账号"
-                        clearable
-                        v-model="formLabelAlign.account">
-                <template slot="prepend"><i class="el-icon-user"></i></template>
+              <el-input placeholder="请输入账号" clearable v-model="formLabelAlign.account">
+                <template slot="prepend">
+                  <i class="el-icon-user"></i>
+                </template>
               </el-input>
             </el-form-item>
             <el-form-item>
-              <el-input placeholder="请输入账号"
-                        show-password
-                        v-model="formLabelAlign.passWard">
-                <template slot="prepend"><i class="el-icon-lock"></i></template>
+              <el-input placeholder="请输入账号" show-password v-model="formLabelAlign.passWard">
+                <template slot="prepend">
+                  <i class="el-icon-lock"></i>
+                </template>
               </el-input>
             </el-form-item>
           </el-form>
-          <el-button type="primary"
-                     style="width:100%"
-                     @click="loginBtn">登录</el-button>
-          <div class="tips">
-            Tips:用户名密码随便填。
-          </div>
+          <el-button type="primary" style="width:100%" @click="loginBtn">登录</el-button>
+          <div class="tips">Tips:用户名密码随便填。</div>
         </div>
       </div>
     </div>
@@ -42,7 +38,9 @@ export default {
     }
   },
   methods: {
-    loginBtn() {},
+    loginBtn() {
+      this.$router.push('/')
+    },
   },
 }
 </script>
