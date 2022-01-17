@@ -14,9 +14,13 @@
         @node-click="handleNodeClickTree"
       ></el-tree>
     </div>
+    <el-divider></el-divider>
+    <baseInputSel :options="options" v-model="tagsArray" />
+    <button @click="submit">提交</button>
   </div>
 </template>
 <script>
+import baseInputSel from '@/comm/baseInputSel.vue'
 function treeListToList(treeList) {
   // 将树结构的列表转换为普通列表
   let list = []
@@ -61,8 +65,20 @@ function toTree(data) {
   return val
 }
 export default {
+  components: {
+    baseInputSel,
+  },
   data() {
     return {
+      tagsArray: [],
+      options: [
+        'a',
+        'b',
+        'c',
+        // { label: 'a', value: 'a' },
+        // { label: 'b', value: 'b' },
+        // { label: 'c', value: 'c' },
+      ],
       message: 'zh_CN=中国,en_US=china',
       textareaTreeData: '',
       defaultProps: {
@@ -142,8 +158,12 @@ export default {
   },
   created() {
     this.treeData = toTree(this.initialData)
+    console.log('创建了')
   },
   methods: {
+    submit() {
+      console.log(this.tagsArray)
+    },
     btn() {
       this.$message({
         message: '控制台打印了Tree数据和转换的普通数据',

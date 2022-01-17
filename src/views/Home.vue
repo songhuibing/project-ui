@@ -5,7 +5,10 @@
     <div class="content-box" :class="isCollapse?'min':'max'">
       <tags></tags>
       <div class="content">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view v-if="$route.meta.keepAlive"></router-view>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
       </div>
     </div>
   </div>
@@ -41,7 +44,7 @@ export default {
     .content {
       position: absolute;
       right: 10px;
-      padding: 20px;
+      padding: 10px;
       left: 0;
       top: 30px;
       bottom: 0;

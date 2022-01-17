@@ -1,22 +1,47 @@
 <template>
   <div style="padding:20px">
-    <el-table :data="tableData6"
-              :span-method="objectSpanMethod"
-              border>
-      <el-table-column prop="id"
-                       label="ID"
-                       width="180"></el-table-column>
-      <el-table-column prop="name"
-                       label="姓名"></el-table-column>
-      <el-table-column prop="amount1"
-                       label="数值 1（元）"></el-table-column>
+    <formSearch v-model="formData" :data="searchFormData" />
+    <el-table :data="tableData6" :span-method="objectSpanMethod" border>
+      <el-table-column prop="id" label="ID" width="180"></el-table-column>
+      <el-table-column prop="name" label="姓名"></el-table-column>
+      <el-table-column prop="amount1" label="数值 1（元）"></el-table-column>
     </el-table>
   </div>
 </template>
 <script>
+import formSearch from '@/comm/formSearch'
 export default {
+  components: {
+    formSearch,
+  },
   data() {
     return {
+      formData: {},
+      /**
+       * title:       表单名
+       * key:         表单字段
+       * type:        表单类型
+       * options:     当表单类型为select,raido,checkbox时使用  [label:'',value:'']
+       * defaultValue 表单元素的默认值
+       * props        接收element原始表单所有属性
+       * *******************
+       * hasControl   控制表单按钮显示隐藏
+       * submitText   提交文本
+       * resetText    重置文本
+       */
+      searchFormData: [
+        { type: 'input', title: '用户名', key: 'username', isRequire: true },
+        { type: 'inputName', title: '年龄', key: 'age', isRequire: true },
+        {
+          type: 'radio',
+          title: '性别',
+          key: 'sex',
+          options: [
+            { label: '男', value: 1 },
+            { label: '女', value: 2 },
+          ],
+        },
+      ],
       spanArr: [], //用于存放每一行记录的合并数
       tableData6: [
         {

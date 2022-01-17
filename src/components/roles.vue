@@ -1,25 +1,21 @@
 <template >
   <div>
     <div style="display:flex">
-      region: <el-select v-model="value"
-                 size='mini'
-                 @change='changeFilter'
-                 placeholder="请选择">
-        <el-option v-for="item in options"
-                   :key="item.value"
-                   :label="item.label"
-                   :value="item.value">
-        </el-option>
+      region:
+      <el-select v-model="value" size="mini" @change="changeFilter" placeholder="请选择">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
       </el-select>
       <button @click="exportToPDF">export</button>
     </div>
-    <div id="vizContainer"
-         style="width:100%;height:100%">
-    </div>
-
+    <div id="vizContainer" style="width:100%;height:100%"></div>
   </div>
 </template>
- <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+ <!--<script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script> -->
 <script>
 //http://public.tableau.com/    http://<server name>/trusted
 //  1.配置服务端的受信任IP 为本机  post http:// tableserve地址?username= 用户名 &target_site=  访问站点(EmbeddedAnalysis) 获取tick   sso

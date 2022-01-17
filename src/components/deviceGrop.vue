@@ -2,29 +2,26 @@
   <div>
     <!-- <h5>发布订阅模式</h5> -->
     <div>
-      <el-button size="mini"
-                 class="none-radius"
-                 @click="handleExport">导出</el-button>
-      <el-table id="tableWrap"
-                :data="tableData"
-                tooltip-effect="dark"
-                style="width: 100%"
-                @selection-change="handleSelectionChange">
-        <el-table-column type="selection"
-                         width="55">
-        </el-table-column>
-        <el-table-column label="日期"
-                         width="120">
+      <el-button size="mini" class="none-radius" @click="handleExport">导出</el-button>
+      <el-table
+        id="tableWrap"
+        :data="tableData"
+        tooltip-effect="dark"
+        style="width: 100%"
+        @selection-change="handleSelectionChange"
+      >
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column label="日期" width="120">
           <template slot-scope="scope">{{ scope.row.date }}</template>
         </el-table-column>
-        <el-table-column prop="name"
-                         label="姓名"
-                         width="120">
-        </el-table-column>
-        <el-table-column prop="address"
-                         label="地址"
-                         show-overflow-tooltip>
-        </el-table-column>
+        <el-table-column prop="name" label="姓名" width="120"></el-table-column>
+        <el-table-column
+          prop="address"
+          label="朋友家的地址"
+          width="100"
+          style="height:30px;"
+          show-overflow-tooltip
+        ></el-table-column>
       </el-table>
     </div>
   </div>

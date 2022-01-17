@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import store from '../store/index'
@@ -23,7 +24,8 @@ const routes = [
         name: 'TreeDataType',
         component: () => import('../components/TreeDataType.vue'),
         meta: {
-          title: '用户列表'
+          title: '用户列表',
+          keepAlive: true
         }
       },
       {
@@ -31,7 +33,8 @@ const routes = [
         name: 'dataRenderTwo',
         component: () => import('../components/dataRenderTwo.vue'),
         meta: {
-          title: '数据渲染二'
+          title: '数据渲染二',
+          keepAlive: true
         }
       },
       {
@@ -39,7 +42,8 @@ const routes = [
         name: 'dataRenderOne',
         component: () => import('../components/dataRenderOne.vue'),
         meta: {
-          title: '数据渲染一'
+          title: '数据渲染一',
+          keepAlive: true
         }
       },
 
@@ -48,7 +52,8 @@ const routes = [
         name: 'userGroup',
         component: () => import('../components/userGroup.vue'),
         meta: {
-          title: '用户组'
+          title: '用户组',
+          keepAlive: true
         }
       },
       {
@@ -56,7 +61,8 @@ const routes = [
         name: 'roleGroup',
         component: () => import('../components/roleGroup.vue'),
         meta: {
-          title: '角色组'
+          title: '角色组',
+          keepAlive: true
         }
       },
       {
@@ -64,7 +70,8 @@ const routes = [
         name: 'roles',
         component: () => import('../components/roles.vue'),
         meta: {
-          title: '角色列表'
+          title: '角色列表',
+          keepAlive: true
         }
       },
       {
@@ -72,7 +79,8 @@ const routes = [
         name: 'powersetting',
         component: () => import('../components/powersetting.vue'),
         meta: {
-          title: '权限管理'
+          title: '权限管理',
+          keepAlive: false
         }
       },
       {
@@ -80,7 +88,28 @@ const routes = [
         name: 'device-grop',
         component: () => import('../components/deviceGrop.vue'),
         meta: {
-          title: '权限管理'
+          title: '权限管理',
+          keepAlive: false
+        }
+      },
+      {
+        path: '/login-log',
+        name: 'login-log',
+        component: () => import('../components/loginLog.vue'),
+        meta: {
+          title: '权限管理',
+          keepAlive: false
+        }
+      },
+
+      //
+      {
+        path: '/opts-log',
+        name: 'opts-log',
+        component: () => import('../components/optsLog.vue'),
+        meta: {
+          title: '权限管理',
+          keepAlive: false
         }
       },
       {
@@ -88,11 +117,31 @@ const routes = [
         name: 'alarms',
         component: () => import('../components/alarms.vue'),
         meta: {
-          title: '权限管理'
+          title: '权限管理',
+          keepAlive: false
+        }
+      },
+
+      //device-list  
+      {
+        path: '/device-list',
+        name: 'device-list',
+        component: () => import('../components/deviceList.vue'),
+        meta: {
+          title: '权限管理',
+          keepAlive: false
+        }
+      },
+      //
+      {
+        path: '/device-app',
+        name: 'device-list',
+        component: () => import('../components/deviceApp.vue'),
+        meta: {
+          title: '权限管理',
+          keepAlive: false
         }
       }
-
-      //powersetting  alarms
     ]
   },
   {

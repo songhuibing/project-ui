@@ -1,9 +1,6 @@
 <template>
   <div>
-    <js-mind :values="mind"
-             :options="options"
-             ref="jsMind"
-             :height="mindHeight"></js-mind>
+    <js-mind :values="mind" :options="options" ref="jsMind" :height="mindHeight"></js-mind>
   </div>
 </template>
 
@@ -69,7 +66,7 @@ export default {
       },
       options: {
         container: 'jsmind_container', // [必选] 容器的ID
-        editable: false, // [可选] 是否启用编辑
+        editable: true, // [可选] 是否启用编辑
         theme: 'orange', // [可选] 主题
       },
       defaultProps: {
